@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#121417" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+
+    <title>SUPER-TECH</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">SUPER TECCH</h1>
+        <nav>
+          <ul class="nav-list" id="nav-list">
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+          <button class="hamburger" id="hamburger-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content container reveal">
+        <span class="hero-badge">Assistência Técnica Especializada</span>
+        <h2>Soluções Completas para Celulares, PCs e Notebooks</h2>
+        <p>Diagnóstico gratuito • Peças originais • Garantia estendida</p>
+        <div class="hero-cta">
+          <a href="#" id="whatsapp-hero" class="btn btn-primary">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.768.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.611-.922-2.206-.242-.579-.487-.5-.672-.51l-.572-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347Z" />
+            </svg>
+            Solicitar Orçamento
+          </a>
+          <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>+1.500</strong>
+            <span>Reparos realizados</span>
+          </div>
+          <div class="stat">
+            <strong>98%</strong>
+            <span>Satisfação</span>
+          </div>
+          <div class="stat">
+            <strong>6+</strong>
+            <span>Anos de experiência</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="servicos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">O que fazemos</span>
+          <h2 class="section-title">Nossos Serviços</h2>
+          <p class="section-subtitle">Soluções completas com garantia e qualidade comprovada</p>
+        </div>
+
+        <div class="cards">
+          <div class="card reveal" data-service="mobile">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="./IMAGE/celular.png" alt="Celular quebrado" style="width: 64px; height: 64px; display: block" />
+              </div>
+              <div class="card-badge">Mais procurado</div>
+            </div>
+            <h3>Reparo de Celulares</h3>
+            <p class="card-desc">Especialistas em todas as marcas e modelos</p>
+            <ul class="card-list">
+              <li>
+                <span class="check-icon">✓</span>
+                Troca de tela (LCD/OLED/AMOLED)
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Substituição de bateria original
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Conector de carga (USB/Type‑C/Lightning)
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Câmera, alto‑falante e microfone
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Botões (power/volume/home)
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Reparo de placa-mãe e curto-circuito
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Higienização e tampa traseira
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Atualização e otimização de sistema
+              </li>
+            </ul>
+            <a href="#" class="card-btn">Solicitar orçamento →</a>
+          </div>
+
+          <div class="card reveal" data-service="pc">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="./IMAGE/pc.png" alt="PC" />
+              </div>
+            </div>
+            <h3>Manutenção de PCs</h3>
+            <p class="card-desc">Performance e estabilidade garantidas</p>
+            <ul class="card-list">
+              <li>
+                <span class="check-icon">✓</span>
+                Formatação e instalação do Windows 11
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Remoção completa de vírus e malware
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Upgrade de SSD NVMe e memória RAM
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Limpeza profunda e pasta térmica premium
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Troca de fonte e armazenamento
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Instalação de drivers e softwares
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Backup e recuperação de dados
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Otimização completa de desempenho
+              </li>
+            </ul>
+            <a href="#" class="card-btn">Solicitar orçamento →</a>
+          </div>
+
+          <div class="card reveal" data-service="notebook">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="./IMAGE/notebook.png" alt="Notebook" />
+              </div>
+            </div>
+            <h3>Conserto de Notebooks</h3>
+            <p class="card-desc">Reparo especializado em todas as marcas</p>
+            <ul class="card-list">
+              <li>
+                <span class="check-icon">✓</span>
+                Troca de teclado e touchpad
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Substituição de tela (Full HD/4K)
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Reparo de dobradiça e carcaça
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Bateria original e conector DC Jack
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Limpeza completa e pasta térmica
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Reparo de placa e reballing BGA
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Upgrade de SSD e memória RAM
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                Formatação e configuração completa
+              </li>
+            </ul>
+            <a href="#" class="card-btn">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Conheça-nos</span>
+          <h2 class="section-title">Por que escolher a SUPER TECCH?</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">
+              Somos referência em assistência técnica, com
+              <strong>mais de 6 anos</strong>
+              de experiência e
+              <strong>+1.500 reparos</strong>
+              realizados com sucesso.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-icon">🔧</div>
+                <h4>Técnicos Certificados</h4>
+                <p>Equipe especializada e constantemente atualizada</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h4>Reparo Rápido</h4>
+                <p>Maioria dos reparos em até 24h</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <h4>Garantia Estendida</h4>
+                <p>3 meses de garantia em todos os serviços</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">💎</div>
+                <h4>Peças Originais</h4>
+                <p>Trabalhamos apenas com peças de qualidade</p>
+              </div>
+            </div>
+
+            <div class="trust-badges">
+              <div class="trust-item">
+                <span class="trust-number">+1.500</span>
+                <span class="trust-label">Clientes atendidos</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-number">98%</span>
+                <span class="trust-label">Aprovação</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-number">6+</span>
+                <span class="trust-label">Anos de mercado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual reveal">
+            <div class="visual-card">
+              <div class="visual-header">
+                <span class="pulse-dot"></span>
+                <span>Atendimento Online</span>
+              </div>
+              <div class="visual-content">
+                <div class="message-bubble">
+                  <p>Olá! Preciso de um orçamento para troca de tela do iPhone</p>
+                  <span class="time">14:32</span>
+                </div>
+                <div class="message-bubble reply">
+                  <p>Olá! Claro, posso ajudar. Qual o modelo exato?</p>
+                  <span class="time">14:33</span>
+                </div>
+              </div>
+              <div class="visual-footer">
+                <span class="typing">Digitando...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Fale conosco</span>
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-subtitle">Estamos prontos para atender você</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <div class="info-content">
+                <h4>Endereço</h4>
+                <p>
+                  Rua Exemplo, 123 — Centro
+                  <br />
+                  Sua Cidade, Estado
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">🕒</div>
+              <div class="info-content">
+                <h4>Horário de Atendimento</h4>
+                <p>
+                  Segunda a Sexta: 9h às 18h
+                  <br />
+                  Sábado: 9h às 13h
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">✉️</div>
+              <div class="info-content">
+                <h4>E-mail</h4>
+                <p>
+                  contato@supertech.com
+                  <br />
+                  suporte@supertech.com
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card highlight">
+              <div class="info-icon">🎁</div>
+              <div class="info-content">
+                <h4>Diagnóstico Gratuito</h4>
+                <p>Avaliação completa sem custo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card reveal">
+            <h3>Atendimento Rápido</h3>
+            <p>Envie sua mensagem pelo WhatsApp ou ligue agora mesmo.</p>
+
+            <div class="contact-actions">
+              <a href="#" id="whatsapp-footer" class="btn btn-whatsapp btn-large">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.768.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.611-.922-2.206-.242-.579-.487-.5-.672-.51l-.572-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347Z" />
+                </svg>
+                Chamar no WhatsApp
+              </a>
+              <a href="tel:+5511999999999" class="btn btn-outline btn-large">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.57.57 1 1 0 011 1v3.49a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.21 1.11z" />
+                </svg>
+                (11) 99999-9999
+              </a>
+            </div>
+
+            <div class="response-time">
+              <span class="pulse-dot"></span>
+              Tempo médio de resposta:
+              <strong>5 minutos</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-social">
+          <a href="https://instagram.com/seuperfil" class="icon-btn is-instagram" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403a4.92 4.92 0 0 1 1.675 1.088 4.92 4.92 0 0 1 1.088 1.675c.163.457.349 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a4.92 4.92 0 0 1-1.088 1.675 4.92 4.92 0 0 1-1.675 1.088c-.457.163-1.257.349-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a4.92 4.92 0 0 1-1.675-1.088 4.92 4.92 0 0 1-1.088-1.675c-.163-.457-.349-1.257-.403-2.427C2.175 15.784 2.163 15.404 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427a4.92 4.92 0 0 1 1.088-1.675 4.92 4.92 0 0 1 1.675-1.088c.457-.163 1.257-.349 2.427-.403C8.416 2.175 8.796 2.163 12 2.163Zm0 3.675a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326Zm0 10.163a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998Zm6.406-11.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0Z" />
+            </svg>
+          </a>
+          <a href="https://facebook.com/seuperfil" class="icon-btn is-facebook" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.093 10.125 24v-8.438H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.49 0-1.953.924-1.953 1.873v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.093 24 18.1 24 12.073Z" />
+            </svg>
+          </a>
+          <a href="#" id="whatsapp-social" class="icon-btn is-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M11.998 21.785h-.004A8.994 8.994 0 0 1 3.43 3.433a8.994 8.994 0 1 1 8.568 18.352Zm0-20.485C5.383 1.3 0 6.685 0 13.02c0 2.299.597 4.458 1.637 6.34L.11 23.89l4.722-1.523A11.96 11.96 0 0 0 12.047 24c6.333 0 11.72-5.385 11.72-11.719 0-6.334-5.387-11.719-11.72-11.719Z" />
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.768.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.611-.922-2.206-.242-.579-.487-.5-.672-.51l-.572-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347Z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/company/seuperfil" class="icon-btn is-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0ZM7.056 20.452H3.9V9.999h3.156v10.453ZM5.478 8.58a1.833 1.833 0 1 1 0-3.666 1.833 1.833 0 0 1 0 3.666Zm14.969 11.872h-3.156v-5.675c0-1.353-.484-2.277-1.692-2.277-.924 0-1.473.622-1.714 1.223-.088.213-.11.509-.11.806v5.923H10.62V10h3.028v1.425c.4-.617 1.271-1.493 3.089-1.493 2.258 0 3.71 1.476 3.71 4.646v5.874Z" />
+            </svg>
+          </a>
+          <a href="https://youtube.com/@seuperfil" class="icon-btn is-youtube" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M23.5 6.186a3.012 3.012 0 0 0-2.12-2.13C19.77 3.5 12 3.5 12 3.5s-7.77 0-9.38.556A3.012 3.012 0 0 0 .5 6.186 31.39 31.39 0 0 0 0 12a31.39 31.39 0 0 0 .5 5.814 3.012 3.012 0 0 0 2.12 2.13C4.23 20.5 12 20.5 12 20.5s7.77 0 9.38-.556a3.012 3.012 0 0 0 2.12-2.13A31.39 31.39 0 0 0 24 12a31.39 31.39 0 0 0-.5-5.814ZM9.75 15.568V8.432L15.818 12 9.75 15.568Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <br />
+      <p>© 2025 SUPER-TECH - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão flutuante WhatsApp -->
+    <a href="#" class="fab-whatsapp" aria-label="Falar no WhatsApp">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path
+          d="M11.998 21.785h-.004A8.994 8.994 0 0 1 3.43 3.433a8.994 8.994 0 1 1 8.568 18.352Zm0-20.485C5.383 1.3 0 6.685 0 13.02c0 2.299.597 4.458 1.637 6.34L.11 23.89l4.722-1.523A11.96 11.96 0 0 0 12.047 24c6.333 0 11.72-5.385 11.72-11.719 0-6.334-5.387-11.719-11.72-11.719Z" />
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.768.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.611-.922-2.206-.242-.579-.487-.5-.672-.51l-.572-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347Z" />
+      </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="./JS/script.js" defer></script>
+  </body>
+</html>
