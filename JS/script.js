@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
   // Aplicar link em todos os botões WhatsApp
-  const whatsappButtons = ["#whatsapp-hero", "#whatsapp-footer", "#whatsapp-social", ".fab-whatsapp"];
+  const whatsappButtons = ["#whatsapp-hero", "#whatsapp-footer", "#whatsapp-social", ".fab-whatsapp", "#cta-whatsapp"];
 
   whatsappButtons.forEach((selector) => {
     const elements = document.querySelectorAll(selector);
@@ -83,6 +83,157 @@ document.addEventListener("DOMContentLoaded", () => {
       window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
     });
   });
+
+  // Depoimentos - Slider simples
+  const testimonials = Array.from(document.querySelectorAll(".testimonial"));
+  const testimonialIndicators = Array.from(document.querySelectorAll(".testimonial-indicators button"));
+  const prevTestimonial = document.getElementById("testimonial-prev");
+  const nextTestimonial = document.getElementById("testimonial-next");
+  const testimonialSlider = document.querySelector(".testimonial-slider");
+  let testimonialIndex = testimonials.findIndex((testimonial) => testimonial.classList.contains("active"));
+  let testimonialInterval;
+
+  if (testimonials.length) {
+    if (testimonialIndex < 0) {
+      testimonialIndex = 0;
+    }
+
+    const setActiveTestimonial = (index) => {
+      if (!testimonials.length) return;
+      testimonialIndex = (index + testimonials.length) % testimonials.length;
+
+      testimonials.forEach((testimonial, idx) => {
+        const isActive = idx === testimonialIndex;
+        testimonial.classList.toggle("active", isActive);
+        testimonial.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      testimonialIndicators.forEach((indicator, idx) => {
+        const isActive = idx === testimonialIndex;
+        indicator.classList.toggle("active", isActive);
+        indicator.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    };
+
+    const stopAutoplay = () => {
+      if (testimonialInterval) {
+        clearInterval(testimonialInterval);
+        testimonialInterval = undefined;
+      }
+    };
+
+    const startAutoplay = () => {
+      if (testimonials.length <= 1) return;
+      stopAutoplay();
+      testimonialInterval = window.setInterval(() => {
+        setActiveTestimonial(testimonialIndex + 1);
+      }, 7000);
+    };
+
+    const resetAutoplay = () => {
+      stopAutoplay();
+      startAutoplay();
+    };
+
+    if (prevTestimonial) {
+      prevTestimonial.addEventListener("click", () => {
+        setActiveTestimonial(testimonialIndex - 1);
+        resetAutoplay();
+      });
+    }
+
+    if (nextTestimonial) {
+      nextTestimonial.addEventListener("click", () => {
+        setActiveTestimonial(testimonialIndex + 1);
+        resetAutoplay();
+      });
+    }
+
+    testimonialIndicators.forEach((indicator, idx) => {
+      indicator.addEventListener("click", () => {
+        setActiveTestimonial(idx);
+        resetAutoplay();
+      });
+    });
+
+    if (testimonialSlider) {
+      ["mouseenter", "focusin"].forEach((eventName) => {
+        testimonialSlider.addEventListener(eventName, stopAutoplay);
+      });
+
+      ["mouseleave", "focusout"].forEach((eventName) => {
+        testimonialSlider.addEventListener(eventName, startAutoplay);
+      });
+    }
+
+    setActiveTestimonial(testimonialIndex);
+    startAutoplay();
+  }
+
+  // FAQ - Acordeão acessível
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  if (faqItems.length) {
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      if (!question || !answer) return;
+
+      const closeItem = () => {
+        item.classList.remove("open");
+        question.setAttribute("aria-expanded", "false");
+        answer.style.maxHeight = "";
+      };
+
+      const openItem = () => {
+        item.classList.add("open");
+        question.setAttribute("aria-expanded", "true");
+        answer.style.maxHeight = `${answer.scrollHeight}px`;
+      };
+
+      question.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+
+        faqItems.forEach((otherItem) => {
+          if (otherItem === item) return;
+          const otherQuestion = otherItem.querySelector(".faq-question");
+          const otherAnswer = otherItem.querySelector(".faq-answer");
+          if (!otherQuestion || !otherAnswer) return;
+          otherItem.classList.remove("open");
+          otherQuestion.setAttribute("aria-expanded", "false");
+          otherAnswer.style.maxHeight = "";
+        });
+
+        if (isOpen) {
+          closeItem();
+        } else {
+          openItem();
+        }
+      });
+    });
+
+    const firstItem = faqItems[0];
+    const firstQuestion = firstItem.querySelector(".faq-question");
+    const firstAnswer = firstItem.querySelector(".faq-answer");
+
+    if (firstQuestion && firstAnswer) {
+      firstItem.classList.add("open");
+      firstQuestion.setAttribute("aria-expanded", "true");
+      firstAnswer.style.maxHeight = `${firstAnswer.scrollHeight}px`;
+    }
+
+    window.addEventListener("resize", () => {
+      faqItems.forEach((item) => {
+        if (item.classList.contains("open")) {
+          const answer = item.querySelector(".faq-answer");
+          if (answer) {
+            answer.style.maxHeight = `${answer.scrollHeight}px`;
+          }
+        }
+      });
+    });
+  }
 
   // Header transparente ao scroll
   const header = document.querySelector("header");
