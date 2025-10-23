@@ -10,19 +10,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <!-- Styles -->
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/palette.css" />
 
     <title>SUPER-TECH</title>
   </head>
   <body>
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
     <header>
       <div class="container">
         <h1 class="logo">SUPER TECCH</h1>
         <nav>
           <ul class="nav-list" id="nav-list">
             <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#orcamento">Orçamento</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
+            <span class="icon-sun" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79Zm10.48 0 1.79-1.79 1.79 1.79-1.79 1.79-1.79-1.79ZM12 2h0c-.55 0-1 .45-1 1v2a1 1 0 0 0 2 0V3c0-.55-.45-1-1-1Zm0 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm8-6h2c.55 0 1 .45 1 1h0c0 .55-.45 1-1 1h-2a1 1 0 0 1 0-2ZM2 12H0c-.55 0-1-.45-1-1h0c0-.55.45-1 1-1h2a1 1 0 0 1 0 2Zm3.17 7.16-1.79 1.79 1.79 1.79 1.79-1.79-1.79-1.79Zm15.89 0 1.79 1.79-1.79 1.79-1.79-1.79 1.79-1.79ZM12 19c-.55 0-1 .45-1 1v2a1 1 0 0 0 2 0v-2c0-.55-.45-1-1-1Z"/>
+              </svg>
+            </span>
+            <span class="icon-moon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M21.64 13a9 9 0 0 1-11.31-11.3 1 1 0 0 0-1.27-1.27A11 11 0 1 0 22.91 14.27 1 1 0 0 0 21.64 13Z"/>
+              </svg>
+            </span>
+          </button>
+          <button id="palette-toggle" class="palette-toggle" aria-label="Alternar paleta" aria-pressed="false" title="Alternar paleta"></button>
           <button class="hamburger" id="hamburger-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
             <span></span>
             <span></span>
@@ -33,6 +49,11 @@
     </header>
 
     <section class="hero">
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="shape shape-1"></span>
+        <span class="shape shape-2"></span>
+        <span class="shape shape-3"></span>
+      </div>
       <div class="hero-content container reveal">
         <span class="hero-badge">Assistência Técnica Especializada</span>
         <h2>Soluções Completas para Celulares, PCs e Notebooks</h2>
@@ -73,7 +94,7 @@
         </div>
 
         <div class="cards">
-          <div class="card reveal" data-service="mobile">
+          <div class="card reveal" data-service="mobile" data-delay="0s">
             <div class="card-header">
               <div class="card-icon">
                 <img src="./IMAGE/celular.png" alt="Celular quebrado" style="width: 64px; height: 64px; display: block" />
@@ -119,7 +140,7 @@
             <a href="#" class="card-btn">Solicitar orçamento →</a>
           </div>
 
-          <div class="card reveal" data-service="pc">
+          <div class="card reveal" data-service="pc" data-delay="0.1s">
             <div class="card-header">
               <div class="card-icon">
                 <img src="./IMAGE/pc.png" alt="PC" />
@@ -141,6 +162,7 @@
                 Upgrade de SSD NVMe e memória RAM
               </li>
               <li>
+                
                 <span class="check-icon">✓</span>
                 Limpeza profunda e pasta térmica premium
               </li>
@@ -164,7 +186,7 @@
             <a href="#" class="card-btn">Solicitar orçamento →</a>
           </div>
 
-          <div class="card reveal" data-service="notebook">
+          <div class="card reveal" data-service="notebook" data-delay="0.2s">
             <div class="card-header">
               <div class="card-icon">
                 <img src="./IMAGE/notebook.png" alt="Notebook" />
@@ -293,6 +315,245 @@
       </div>
     </section>
 
+    <section id="orcamento" class="orcamento">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Estimativa rápida</span>
+          <h2 class="section-title">Simular Orçamento</h2>
+          <p class="section-subtitle">Selecione o dispositivo e o problema para ver uma faixa de preço e prazo aproximados.</p>
+        </div>
+
+        <div class="quote-grid">
+          <form id="quote-form" class="quote-form reveal" data-delay="0.05s" autocomplete="on">
+            <div class="form-control">
+              <label for="q-device">Dispositivo</label>
+              <select id="q-device" required>
+                <option value="mobile">Celular</option>
+                <option value="notebook">Notebook</option>
+                <option value="pc">PC</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="q-brand-select">Marca</label>
+              <select id="q-brand-select">
+                <option value="">Selecione…</option>
+                <option value="Outra">Outra</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="q-model-select">Modelo</label>
+              <select id="q-model-select">
+                <option value="">Selecione…</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="q-problem">Problema</label>
+              <select id="q-problem" required>
+                <option value="tela">Tela quebrada</option>
+              </select>
+            </div>
+            <div class="form-control" id="q-part-wrap" hidden>
+              <label for="q-part">Tipo de peça (quando aplicável)</label>
+              <select id="q-part">
+                <option value="indefinido">Indefinido</option>
+                <option value="original_oled">Original/OLED (+40%)</option>
+                <option value="premium">Premium compatível (+20%)</option>
+                <option value="basica">Compatível básica</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="q-brand">Marca/Modelo</label>
+              <input id="q-brand" type="text" placeholder="Ex.: iPhone 11 / Samsung A52 / Dell Inspiron" />
+            </div>
+            <div class="form-control full">
+              <label for="q-photos">URLs de fotos (opcional)</label>
+              <textarea id="q-photos" rows="2" placeholder="Cole links (Drive, Dropbox, link direto), um por linha"></textarea>
+            </div>
+            <div class="form-control">
+              <label for="q-urgency">Urgência</label>
+              <select id="q-urgency">
+                <option value="0">Normal</option>
+                <option value="0.15">Rápida (+15%)</option>
+                <option value="0.3">Expressa (+30%)</option>
+              </select>
+            </div>
+            <div class="form-control full">
+              <label for="q-notes">Observações (opcional)</label>
+              <textarea id="q-notes" rows="3" placeholder="Descreva sinais, códigos de erro, quedas, contato com líquido, etc."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" id="q-calc" class="btn btn-primary">Calcular estimativa</button>
+              <button type="button" id="q-whatsapp" class="btn btn-whatsapp">Enviar no WhatsApp</button>
+            </div>
+            <p class="hint">Valores são estimativas. O diagnóstico técnico confirma o orçamento final.</p>
+          </form>
+
+          <aside class="quote-result reveal" data-delay="0.1s" aria-live="polite">
+            <div class="result-header">
+              <span class="result-badge">Resultado</span>
+              <h3>Estimativa</h3>
+            </div>
+            <div class="result-body">
+              <div class="result-line">
+                <span>Faixa de Preço</span>
+                <strong id="q-price">—</strong>
+              </div>
+              <div class="result-line">
+                <span>Prazo previsto</span>
+                <strong id="q-time">—</strong>
+              </div>
+              <div class="result-line">
+                <span>Serviço</span>
+                <strong id="q-summary">—</strong>
+              </div>
+            </div>
+            <p class="result-disclaimer">Peças originais e garantia. Diagnóstico gratuito em nossa loja.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="antes-depois" class="compare">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Transformação</span>
+          <h2 class="section-title">Antes e Depois</h2>
+          <p class="section-subtitle">Arraste para comparar o resultado do reparo</p>
+        </div>
+
+        <div class="compare-wrapper reveal" data-delay="0.05s">
+          <div class="compare-inner">
+            <img src="./IMAGE/gallery-2.svg" alt="Imagem depois do reparo" class="compare-img" />
+            <div class="compare-overlay" style="width:50%">
+              <img src="./IMAGE/gallery-5.svg" alt="Imagem antes do reparo" class="compare-img" />
+            </div>
+            <div class="compare-handle" role="separator" aria-orientation="vertical" aria-label="Arraste para comparar" style="left:50%">
+              <span></span>
+            </div>
+          </div>
+          <input type="range" class="compare-range" aria-label="Controle de comparação" min="0" max="100" value="50" />
+        </div>
+      </div>
+    </section>
+
+    <section id="marcas" class="brands">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Confiança</span>
+          <h2 class="section-title">Marcas Atendidas</h2>
+          <p class="section-subtitle">Atuamos com as principais plataformas e equipamentos</p>
+        </div>
+        <ul class="brand-grid reveal" data-delay="0.05s" aria-label="Marcas atendidas">
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="16" width="48" height="32" rx="8" fill="currentColor"/></svg>
+            <span>Apple / iOS</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20" fill="currentColor"/></svg>
+            <span>Android</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 12h24v20H6zM34 12h24v20H34zM6 32h24v20H6zM34 32h24v20H34z" fill="currentColor"/></svg>
+            <span>Windows</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="18" width="44" height="28" rx="6" fill="currentColor"/><rect x="24" y="48" width="16" height="4" rx="2" fill="currentColor"/></svg>
+            <span>Notebooks</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="14" width="48" height="36" rx="4" fill="currentColor"/></svg>
+            <span>PCs</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="10" width="24" height="44" rx="6" fill="currentColor"/></svg>
+            <span>Celulares</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="26" width="44" height="12" rx="6" fill="currentColor"/><circle cx="18" cy="32" r="3" fill="#0ea5e9"/></svg>
+            <span>Hardware</span>
+          </li>
+          <li class="brand-item">
+            <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8l24 14v20L32 56 8 42V22z" fill="currentColor"/></svg>
+            <span>Segurança</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">O que dizem</span>
+          <h2 class="section-title">Depoimentos de Clientes</h2>
+          <p class="section-subtitle">Quem já confiou no nosso trabalho</p>
+        </div>
+
+        <div class="testimonial-wrapper reveal" data-delay="0.1s">
+          <button class="testimonial-nav prev" aria-label="Anterior">‹</button>
+          <div class="testimonial-track" id="testimonial-track" aria-live="polite">
+            <article class="testimonial-card">
+              <div class="rating" aria-label="5 de 5">★★★★★</div>
+              <p class="quote">Trocaram a tela do meu celular no mesmo dia. Atendimento muito atencioso!</p>
+              <div class="author">
+                <strong>Ana Paula</strong>
+                <span>São Paulo - SP</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="rating" aria-label="5 de 5">★★★★★</div>
+              <p class="quote">Meu notebook voltou voando depois da manutenção. Recomendo demais.</p>
+              <div class="author">
+                <strong>Marcos Vinícius</strong>
+                <span>Guarulhos - SP</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="rating" aria-label="4 de 5">★★★★☆</div>
+              <p class="quote">Fizeram backup e formataram meu PC com todo cuidado. Ótimo preço.</p>
+              <div class="author">
+                <strong>Juliana Costa</strong>
+                <span>Osasco - SP</span>
+              </div>
+            </article>
+          </div>
+          <button class="testimonial-nav next" aria-label="Próximo">›</button>
+        </div>
+        <div class="testimonial-cta">
+          <a href="#contato" class="btn btn-outline btn-large">Ver mais avaliações</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Resultados</span>
+          <h2 class="section-title">Galeria de Reparos</h2>
+          <p class="section-subtitle">Alguns registros de serviços realizados pela nossa equipe</p>
+        </div>
+
+        <div class="gallery-grid reveal" data-delay="0.05s">
+          <a href="./IMAGE/gallery-1.svg" class="gallery-item">
+            <img loading="lazy" src="./IMAGE/gallery-1.svg" alt="Placa de computador em manutenção" />
+          </a>
+          <a href="./IMAGE/gallery-2.svg" class="gallery-item">
+            <img loading="lazy" src="./IMAGE/gallery-2.svg" alt="Notebook aberto para reparo" />
+          </a>
+          <a href="./IMAGE/gallery-3.svg" class="gallery-item">
+            <img loading="lazy" src="./IMAGE/gallery-3.svg" alt="Ferramentas de eletrônica" />
+          </a>
+          <a href="./IMAGE/gallery-4.svg" class="gallery-item">
+            <img loading="lazy" src="./IMAGE/gallery-4.svg" alt="Mesa de trabalho com computadores" />
+          </a>
+          <a href="./IMAGE/gallery-5.svg" class="gallery-item">
+            <img loading="lazy" src="./IMAGE/gallery-5.svg" alt="Detalhe de circuito" />
+          </a>
+          <a href="./IMAGE/gallery-6.svg" class="gallery-item">
+            <img loading="lazy" src="./IMAGE/gallery-6.svg" alt="Reparo de notebook" />
+          </a>
+        </div>
+      </div>
+    </section>
     <section id="contato" class="contato">
       <div class="container">
         <div class="section-header">
